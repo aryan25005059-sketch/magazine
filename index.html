@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Today – Online Magazine & News</title>
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --gray: #95a5a6;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #333;
+            background: white;
+        }
+        a { text-decoration: none; color: var(--primary); }
+        
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .logo span { color: var(--primary); }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--primary); }
+
+        main { margin-top: 80px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 2rem 5%; }
+
+        /* Hero - Featured Article */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p { font-size: 1.3rem; margin-bottom: 1.5rem; }
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        .btn:hover { background: #c0392b; }
+
+        /* Sections */
+        .section-title {
+            font-size: 2.2rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--dark);
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .article-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .article-info {
+            padding: 1.5rem;
+        }
+        .article-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .meta {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Subscription */
+        .subscribe {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 4rem 0;
+        }
+        .subscribe h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .subscribe form {
+            max-width: 500px;
+            margin: 2rem auto;
+            display: flex;
+            gap: 10px;
+        }
+        .subscribe input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        .subscribe button {
+            padding: 15px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #111;
+            color: #bbb;
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Horizon<span>Today</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">World</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Culture</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Opinion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Featured Article -->
+        <section class="hero">
+            <h1>The Future of Space Travel Is Here</h1>
+            <p>New breakthroughs in reusable rockets are making Mars missions closer than ever.</p>
+            <a href="#" class="btn">Read Full Story</a>
+        </section>
+
+        <!-- World News -->
+        <h2 class="section-title">World News</h2>
+        <div class="articles-grid">
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="">
+                <div class="article-info">
+                    <div class="meta">November 25, 2025 • Politics</div>
+                    <h3>Global Climate Summit Reaches Historic Agreement</h3>
+                    <p>192 countries commit to net-zero emissions by 2045...</p>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1588681660990-2485a1b4c2a9?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="">
+                <div class="article-info">
+                    <div class="meta">November 24, 2025 • Economy</div>
+                    <h3>Asia-Pacific Trade Deal Expands to Include Africa</h3>
+                    <p>New economic bloc expected to reshape global supply chains...</p>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1495020689067-958852a2989a?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="">
+                <div class="article-info">
+                    <div class="meta">November 23, 2025 • Health</div>
+                    <h3>New Universal Vaccine Shows 98% Effectiveness</h3>
+                    <p>Game-changing breakthrough announced by WHO...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Section -->
+        <h2 class="section-title">Technology</h2>
+        <div class="articles-grid">
+            <!-- Add more article-card blocks here if you want -->
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1518432031352-d6fcadc97649?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="">
+                <div class="article-info">
+                    <div class="meta">November 25, 2025 • AI</div>
+                    <h3>AI Now Writes Better Poetry Than Most Humans</h3>
+                    <p>Study finds latest model outperforms published poets...</p>
+                </div>
+            </div>
+            <!-- repeat as needed -->
+        </div>
+
+        <!-- Subscription Call-to-Action -->
+        <div class="subscribe">
+            <h2>Stay Informed – Subscribe Today</h2>
+            <p>Get the best stories delivered to your inbox daily. Free forever.</p>
+            <form>
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe Now</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Horizon Today – Online Magazine. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
